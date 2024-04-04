@@ -13,7 +13,7 @@ body{
     background-color: black;
 }
 #calculator{
-    width: 40%;
+    width: 400px;
     border: 1px solid #717377;
     padding: 20px;
     border-radius: 16px;

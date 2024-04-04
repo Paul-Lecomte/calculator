@@ -72,7 +72,7 @@ function nbr7(){
 }
 function nbr8(){
     userNumber.push(number8)
-    outputDisplay.inner = userNumber.join('')
+    outputDisplay.innerText = userNumber.join('')
     console.log(userNumber)
 }
 function nbr9(){
@@ -124,41 +124,6 @@ function divide(){
     outputDisplay.innerText = userNumber.join('')
     operator = '/'
 }
-
-//ne pas attendre equals pour effectuer l'opérations
-/*function equal(){é
-    console.log(userNumber)
-    secondNbr = userNumber.join('')
-    console.log(secondNbr)
-    if (operator === '+'){
-        results = parseFloat(firstNbr) + parseFloat(secondNbr);
-        console.log('le résultats est de =', results)
-        outputDisplay.innerText = ''
-        outputDisplay.innerText = results
-    }
-    if (operator === '-'){
-        results = parseFloat(firstNbr) - parseFloat(secondNbr)
-        console.log('le résultats est de =', results)
-        outputDisplay.innerText = ''
-        outputDisplay.innerText = results
-    }
-    if (operator === 'x'){
-        results = parseFloat(firstNbr) * parseFloat(secondNbr)
-        console.log('le résultats est de =', results)
-        outputDisplay.innerText = ''
-        outputDisplay.innerText = results
-    }
-    if (operator === '/'){
-        results = parseFloat(firstNbr) / parseFloat(secondNbr)
-        console.log('le résultats est de =', results)
-        outputDisplay.innerText = ''
-        outputDisplay.innerText = results
-    }
-
-
-}*/
-
-
 // utilisation de la fonction for pour prendre la longeur de usernumber
 // est utilisation de la fonction switch qui permet d'évaluer la string est d'effectuer le calcul selon les opérateur trouver
 function equal(){
