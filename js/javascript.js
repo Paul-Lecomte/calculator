@@ -1,17 +1,13 @@
 let userNumber = []
 let outputDisplay = document.getElementById('output')
 
-let plusOp
-let minusOp
-let multiplyOp
-let divideOp
 let dotOp = document.getElementById('dot').value
 let results
-let resetOp
 let firstNbr
 let secondNbr
 let operator
 
+//va chercher toutes les valeurs des boutton
 let number0 = document.getElementById('0').value
 let number1 = document.getElementById('1').value
 let number2 = document.getElementById('2').value
@@ -29,7 +25,7 @@ let operatorMult = 'x'
 let operatorDiv = '/'
 
 
-
+//push les chiffres dams userNumber est affiche sur le display
 function nbr0(){
     userNumber.push(number0)
     outputDisplay.innerText = userNumber.join('')
@@ -86,7 +82,7 @@ function dot(){
     console.log(userNumber)
 }
 
-
+//reset tous les input ainsi que le display
 function setAllZero(){
     userNumber = []
     firstNbr = []
@@ -96,41 +92,40 @@ function setAllZero(){
     outputDisplay.innerText = ''
 }
 
+//appelle la fonction setAllZero
 function reset(){
     setAllZero()
 }
 
+//Push les opérateurs dans userNumber est puis sur le display
 function plus(){
     firstNbr = userNumber.join('')
     userNumber.push(operatorPlus)
     outputDisplay.innerText = userNumber.join('')
-    operator = '+'
 }
 function minus(){
     firstNbr = userNumber.join('')
     userNumber.push(operatorMinus)
     outputDisplay.innerText = userNumber.join('')
-    operator = '-'
 }
 function multiply(){
     firstNbr = userNumber.join()
     userNumber.push(operatorMult)
     outputDisplay.innerText = userNumber.join('')
-    operator = 'x'
 }
 function divide(){
     firstNbr = userNumber.join()
     userNumber.push(operatorDiv)
     outputDisplay.innerText = userNumber.join('')
-    operator = '/'
 }
 // utilisation de la fonction for pour prendre la longeur de usernumber
 // est utilisation de la fonction switch qui permet d'évaluer la string est d'effectuer le calcul selon les opérateur trouver
+// -=, +=, *=, /=, sont les opérateur utiliser sur les chiffres
 function equal(){
-    var calculation = userNumber
-    var result;
-    for (var a = 0; a < calculation.length; a++) {
-        if (a == 0) {
+    let calculation = userNumber
+    let result;
+    for (let a = 0; a < calculation.length; a++) {
+        if (a === 0) {
           result = parseInt(calculation[a]);
         } else {
           if (!isNaN(calculation[a])) {
@@ -141,7 +136,7 @@ function equal(){
               case "+":
                 result += parseInt(calculation[a]);
                 break;
-              case "*":
+              case "x":
                 result *= parseInt(calculation[a]);
                 break;
               case "/":
