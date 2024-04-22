@@ -12,25 +12,25 @@
             <div id="output" class="calc_output"></div>
             <div id="numbers">
                 <div id="numbers-main">
-                    <button id="7" value="7" class="button button_darker" onclick="nbr7()">7</button>
-                    <button id="8" value="8" class="button button_darker" onclick="nbr8()">8</button>
-                    <button id="9" value="9" class="button button_darker" onclick="nbr9()">9</button>
-                    <button id="4" value="4" class="button button_darker" onclick="nbr4()">4</button>
-                    <button id="5" value="5" class="button button_darker" onclick="nbr5()">5</button>
-                    <button id="6" value="6" class="button button_darker" onclick="nbr6()">6</button>
-                    <button id="1" value="1" class="button button_darker" onclick="nbr1()">1</button>
-                    <button id="2" value="2" class="button button_darker" onclick="nbr2()">2</button>
-                    <button id="3" value="3" class="button button_darker" onclick="nbr3()">3</button>
-                    <button id="0" value="0" class="button button_darker" onclick="nbr0()">0</button>
-                    <button id="dot" value="." class="button button_grey" onclick="dot()">.</button>
+                    <button id="7" value="7" class="button button_darker" onclick="usrInpNbr(this.value)">7</button>
+                    <button id="8" value="8" class="button button_darker" onclick="usrInpNbr(this.value)">8</button>
+                    <button id="9" value="9" class="button button_darker" onclick="usrInpNbr(this.value)">9</button>
+                    <button id="4" value="4" class="button button_darker" onclick="usrInpNbr(this.value)">4</button>
+                    <button id="5" value="5" class="button button_darker" onclick="usrInpNbr(this.value)">5</button>
+                    <button id="6" value="6" class="button button_darker" onclick="usrInpNbr(this.value)">6</button>
+                    <button id="1" value="1" class="button button_darker" onclick="usrInpNbr(this.value)">1</button>
+                    <button id="2" value="2" class="button button_darker" onclick="usrInpNbr(this.value)">2</button>
+                    <button id="3" value="3" class="button button_darker" onclick="usrInpNbr(this.value)">3</button>
+                    <button id="0" value="0" class="button button_darker" onclick="usrInpNbr(this.value)">0</button>
+                    <button id="dot" value="." class="button button_grey" onclick="usrInpNbr(this.value)">.</button>
                     <button id="equal" value="=" class="button button_orange" onclick="equal()">=</button>
                 </div>
                 <div id="operator-header">
                     <button class="operator" type="reset" value="clear" class="button button_orange" onclick="reset()">AC</button>
-                    <button class="operator" value="+" class="button button_grey" onclick="plus()">+</button>
-                    <button class="operator" value="*" class="button button_grey" onclick="multiply()">x</button>
-                    <button class="operator" value="-" class="button button_grey" onclick="minus()">-</button>
-                    <button class="operator" value="/" class="button button_grey" onclick="divide()">÷</button>
+                    <button class="operator" value="+" class="button button_grey" onclick="usrInpOp(this.value)">+</button>
+                    <button class="operator" value="*" class="button button_grey" onclick="usrInpOp(this.value)">x</button>
+                    <button class="operator" value="-" class="button button_grey" onclick="usrInpOp(this.value)">-</button>
+                    <button class="operator" value="/" class="button button_grey" onclick="usrInpOp(this.value)">÷</button>
                 </div>
                     
             </div>
