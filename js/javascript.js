@@ -1,16 +1,12 @@
 let userNumber = []
 let outputDisplay = document.getElementById('output')
 
-let dotOp = document.getElementById('dot').value
 let results
 let firstNbr
 let secondNbr
 let operator
 
-let operatorPlus = '+'
-let operatorMinus = '-'
-let operatorMult = 'x'
-let operatorDiv = '/'
+
 
 //push les chiffres dams userNumber est affiche sur le display
 function usrInpNbr(val){
