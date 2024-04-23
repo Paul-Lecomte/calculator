@@ -43,29 +43,29 @@ function usrInpOp(val){
 // -=, +=, *=, /=, sont les opérateur utiliser sur les chiffres
 function equal(){
     let calculation = userNumber
-    let result;
+    let result
     for (let a = 0; a < calculation.length; a++) {
         if (a === 0) {
-          result = parseInt(calculation[a]);
+          result = parseFloat(calculation[a]);
         } else {
           if (!isNaN(calculation[a])) {
             switch (calculation[a - 1]) {
               case "-":
-                result -= parseInt(calculation[a]);
+                result -= parseFloat(calculation[a]);
                 break;
               case "+":
-                result += parseInt(calculation[a]);
+                result += parseFloat(calculation[a]);
                 break;
               case "x":
-                result *= parseInt(calculation[a]);
+                result *= parseFloat(calculation[a]);
                 break;
               case "/":
-                result /= parseInt(calculation[a]);
+                result /= parseFloat(calculation[a]);
                 break;
             }
           }
         }
       }
     outputDisplay.innerText = ''
-    outputDisplay.innerText = result  
+    outputDisplay.innerText = result
 }
