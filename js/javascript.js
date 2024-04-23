@@ -1,71 +1,77 @@
-let userNumber = []
-let outputDisplay = document.getElementById('output')
+let userNumber = [];
+let outputDisplay = document.getElementById('output');
+let results;
+let firstNbr;
+let secondNbr;
+let operator;
 
-let results
-let firstNbr
-let secondNbr
-let operator
-
-
-
-//push les chiffres dams userNumber est affiche sur le display
-function usrInpNbr(val){
-    userNumber.push(val)
-    outputDisplay.innerText = userNumber.join('')
-    console.log(userNumber)
+// Push numbers into userNumber and display them
+function usrInpNbr(val) {
+    userNumber.push(val);
+    outputDisplay.innerText = userNumber.join('');
+    console.log(userNumber);
 }
 
-
-//reset tous les input ainsi que le display
-function setAllZero(){
-    userNumber = []
-    firstNbr = []
-    secondNbr = []
-    operator = []
-    results = []
-    outputDisplay.innerText = ''
+// Reset all inputs and the display
+function setAllZero() {
+    userNumber = [];
+    firstNbr = [];
+    secondNbr = [];
+    operator = [];
+    results = [];
+    outputDisplay.innerText = '';
 }
 
-//appelle la fonction setAllZero
-function reset(){
-    setAllZero()
+// Call the setAllZero function
+function reset() {
+    setAllZero();
 }
 
-//Push les opérateurs dans userNumber est puis sur le display
-function usrInpOp(val){
-    firstNbr = userNumber.join('')
-    userNumber.push(val)
-    outputDisplay.innerText = userNumber.join('')
+// Push operators into userNumber and display them
+function usrInpOp(val) {
+    firstNbr = userNumber.join('');
+    userNumber.push(val);
+    outputDisplay.innerText = userNumber.join('');
 }
 
-// utilisation de la fonction for pour prendre la longeur de usernumber
-// est utilisation de la fonction switch qui permet d'évaluer la string est d'effectuer le calcul selon les opérateur trouver
-// -=, +=, *=, /=, sont les opérateur utiliser sur les chiffres
-function equal(){
-    let calculation = userNumber
-    let result
-    for (let a = 0; a < calculation.length; a++) {
-        if (a === 0) {
-          result = parseFloat(calculation[a]);
-        } else {
-          if (!isNaN(calculation[a])) {
-            switch (calculation[a - 1]) {
-              case "-":
-                result -= parseFloat(calculation[a]);
+//Function equal that is going to push the result
+function equal() {
+    let calculation = userNumber.join('');
+    let result = calculate(calculation);
+    outputDisplay.innerText = '';
+    outputDisplay.innerText = result;
+}
+
+// Function to execute the calcualtion
+function calculate(expression) {
+    // Split the expression into numbers and operators
+    let numbers = expression.split(/\+|\-|\x|\//).map(parseFloat);
+    let operators = expression.replace(/[0-9]|\./g, '').split('');
+
+    // This does the calculation with the given operators
+    let result = numbers[0];
+    for (let i = 0; i < operators.length; i++) {
+        switch (operators[i]) {
+            case '-':
+                result -= numbers[i + 1];
                 break;
-              case "+":
-                result += parseFloat(calculation[a]);
+            case '+':
+                result += numbers[i + 1];
                 break;
-              case "x":
-                result *= parseFloat(calculation[a]);
+            case 'x':
+                result *= numbers[i + 1];
                 break;
-              case "/":
-                result /= parseFloat(calculation[a]);
+            case '/':
+                if (numbers[i + 1] !== 0) {
+                    result /= numbers[i + 1];
+                } else {
+                    return 'Division by zero is impossible';
+                }
                 break;
-            }
-          }
+            default:
+                break;
         }
-      }
-    outputDisplay.innerText = ''
-    outputDisplay.innerText = result
+    }
+
+    return result;
 }
